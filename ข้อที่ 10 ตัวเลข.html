@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>แปลงตัวเลขเป็นคำอ่าน</title>
+</head>
+<body>
+  <h2>กรอกตัวเลข1-100:</h2>
+
+  <input type="text" id="numberInput">
+  <button onclick="showWords()">แสดง</button>
+
+  <p id="result"></p>
+
+  <script>
+    function showWords() {
+      const numberText = document.getElementById("numberInput").value;
+      const digitWords = {
+        "0": "zero",
+        "1": "one",
+        "2": "two",
+        "3": "three",
+        "4": "four",
+        "5": "five",
+        "6": "six",
+        "7": "seven",
+        "8": "eight",
+        "9": "nine"
+      };
+
+      let result = "";
+      for (let i = 0; i < numberText.length; i++) {
+        let digit = numberText[i];
+        if (digitWords[digit]) {
+          result += digitWords[digit];
+          if (i < numberText.length - 1) {
+            result += ",";
+          }
+        }
+      }
+
+      document.getElementById("result").innerHTML = numberText + " = " + result;
+    }
+  </script>
+</body>
+</html>

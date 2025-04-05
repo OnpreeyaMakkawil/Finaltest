@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>แปลงเวลา</title>
+</head>
+<body>
+
+  <h2>กรอกเวลา (ชั่วโมง:นาที:วินาที)</h2>
+
+  <input type="text" id="timeInput" placeholder="ตัวอย่างเช่น 14:30:15">
+  <button onclick="convertTime()">แสดงผล</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertTime() {
+      let time = document.getElementById("timeInput").value;
+
+      let parts = time.split(":");
+
+      if (parts.length !== 3) {
+        document.getElementById("result").innerText = "กรุณากรอกเวลาให้ถูกต้องในรูปแบบ hh:mm:ss";
+        return;
+      }
+
+      let h = parts[0];
+      let m = parts[1];
+      let s = parts[2];
+
+      let output = h + " นาฬิกา " + m + " นาที " + s + " วินาที";
+      document.getElementById("result").innerText = output;
+    }
+  </script>
+
+</body>
+</html>

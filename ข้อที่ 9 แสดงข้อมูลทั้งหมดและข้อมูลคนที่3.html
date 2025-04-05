@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>แสดงข้อมูลทั้งหมดและคนที่ 3</title>
+</head>
+<body>
+  <h2>ข้อมูลทั้งหมด</h2>
+  <div id="allData"></div>
+
+  <h2>ข้อมูลของคนที่ 3</h2>
+  <div id="thirdPerson"></div>
+
+  <script>
+    const data = [
+      {
+        "Name": "Michael",
+        "Surname": "Pinner",
+        "Mobile No.": "091234567",
+        "Department": "Physics",
+        "Time of Occupy": 30
+      },
+      {
+        "Name": "David",
+        "Surname": "Chicago",
+        "Mobile No.": "081345678",
+        "Department": "Physics",
+        "Time of Occupy": 35
+      },
+      {
+        "Name": "Alex",
+        "Surname": "Madrid",
+        "Mobile No.": "085345683",
+        "Department": "Physics",
+        "Time of Occupy": 25
+      },
+      {
+        "Name": "Denis",
+        "Surname": "Paris",
+        "Mobile No.": "064569385",
+        "Department": "Chemistry",
+        "Time of Occupy": 24
+      }
+    ];
+
+    let all = "";
+    for (let i = 0; i < data.length; i++) {
+      all += "<p><strong>ชื่อ:</strong> " + data[i].Name + "<br>";
+      all += "<strong>นามสกุล:</strong> " + data[i].Surname + "<br>";
+      all += "<strong>เบอร์โทร:</strong> " + data[i]["Mobile No."] + "<br>";
+      all += "<strong>แผนก:</strong> " + data[i].Department + "<br>";
+      all += "<strong>เวลาอยู่:</strong> " + data[i]["Time of Occupy"] + "</p><hr>";
+    }
+    document.getElementById("allData").innerHTML = all;
+
+    const third = data[2]; 
+    let thirdHtml = "<p><strong>ชื่อ:</strong> " + third.Name + "<br>" +
+                    "<strong>นามสกุล:</strong> " + third.Surname + "<br>" +
+                    "<strong>เบอร์โทร:</strong> " + third["Mobile No."] + "<br>" +
+                    "<strong>แผนก:</strong> " + third.Department + "<br>" +
+                    "<strong>เวลาอยู่:</strong> " + third["Time of Occupy"] + "</p>";
+
+    document.getElementById("thirdPerson").innerHTML = thirdHtml;
+  </script>
+</body>
+</html>

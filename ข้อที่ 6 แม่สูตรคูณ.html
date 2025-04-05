@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>แม่สูตรคูณแม่ 79</title>
+</head>
+<body>
+
+  <h2>แม่สูตรคูณจากรหัสนิสิต</h2>
+
+  <div id="output"></div>
+
+  <script>
+    let studentID = "67540079";
+
+    let lastTwo = parseInt(studentID.slice(-2));
+
+    let result = "<h3>แม่สูตรคูณแม่ " + lastTwo + "</h3>";
+
+    for (let i = 1; i <= 15; i++) {
+      result += lastTwo + " x " + i + " = " + (lastTwo * i) + "<br>";
+    }
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>
